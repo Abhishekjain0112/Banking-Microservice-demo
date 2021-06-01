@@ -1,20 +1,0 @@
-spring:
-  application:
-    name: api-gatway
-
-server:  port: 8888
-  
-zuul:  routes:    cart-service:
-      path: /my-cart/**
-      service-id: cart-service
-      strip-prefix: true
-      
-    menu-item-service:
-      path: /menu-item/**
-      service-id: menu-item-service
-      strip-prefix: false      
-
-    coupon-service:
-      path: /coupons/**
-      service-id: coupon-service
-      strip-prefix: false     
