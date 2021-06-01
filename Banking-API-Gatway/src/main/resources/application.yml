@@ -1,0 +1,21 @@
+# port for zuul proxy
+
+server:
+  port: 8083
+
+spring:
+  application:
+    name: banking-api-gatway
+
+zuul:
+  routes:
+    account-service:
+      path: /account-service/**
+      service-id: account-service
+      strip-prefix: false
+
+    loan-service:
+      path: /loan-service/**
+      service-id: loan-service
+      strip-prefix: false
+      
